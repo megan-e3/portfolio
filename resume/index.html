@@ -1,66 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Megan Yu: Resume</title>
-    <link rel='stylesheet' href='../style.css'>    
-</head>
-<body>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
     <nav class="main-navigation">
-        <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="../projects/">Projects</a></li>
-            <li><a href="../contact/">Contact</a></li>
-            <li><a href="../resume/" class="current">Resume</a></li>            
-            <li><a href="https://github.com/megan-e3" target="_blank" rel="noopener noreferrer">My GitHub profile</a></li>
-        </ul>
+      <ul>
+        <li><a href="../">Home</a></li>
+        <li><a href="../projects/">Projects</a></li>
+        <li><a href="../contact/">Contact</a></li>
+        <li><a href="../resume/" class="current">Resume</a></li>
+        <li>
+          <a
+            href="https://github.com/megan-e3"
+            target="_blank"
+            rel="noopener noreferrer"
+            >My GitHub profile</a
+          >
+        </li>
+      </ul>
     </nav>
-    
-    <h1>
-        Megan Yu
-    </h1>
-    <h2>
-        B.S. MAJOR IN DATA SCIENCE
-    </h2>
 
-    <hr>
+    <h1>Megan Yu</h1>
+    <h2>B.S. MAJOR IN DATA SCIENCE</h2>
 
-    <h3 style="background-color: lightgray; padding: 5px; border-radius: 65px"><section>CONTACT</section></h3>
-    <article>
-        <p>Phone: 110-280-0000 <span style="margin-left: 425px;">Email: <a href="mz0@ucsd.edu">mz0@ucsd.edu</a></span></p>
-    </article>
-    
-    <h3 style="background-color: lightgray; padding: 5px; border-radius: 65px"><section>EDUCATION</section></h3>
-    <article>
-        <p><b>University of California, San Diego <span style="margin-left: 330px;"><time datetime="2024-09">Sept 2024</time> - <time datetime="2029-03">Mar 2029</time></span></p>
-    </b></article>
-    <ul>
-        <li>GPA: 4.0. Provost Honors.</li>
-        <li>Relevant Courses: Data Structures and Algorithms,</li> Theoretical Foundations for Data Science.
-    </ul>
+    <hr />
 
-    <h3 style="background-color: lightgray; padding: 5px; border-radius: 65px"><section>SKILLS</section></h3>
-    <article>
+    <section class="resume-section">
+      <h3>CONTACT</h3>
+      <article>
+        <p class="contact-info">
+          <span>Phone: 110-280-0000</span>
+          <span>Email: <a href="mailto:mz0@ucsd.edu">mz0@ucsd.edu</a></span>
+        </p>
+      </article>
+    </section>
+    <section class="resume-section">
+      <h3>EDUCATION</h3>
+      <article>
+        <p class="entry-heading">
+          <b>University of California, San Diego</b>
+          <span>
+            <time datetime="2024-09">Sept 2024</time> -
+            <time datetime="2029-03">Mar 2029</time>
+          </span>
+        </p>
         <ul>
-            <li>Data Analysis | Python / Java | NumPy.</li>
-            <li>Collaboration & Leadership | Project Management | Git Workflow.</li>
+          <li>GPA: 4.0. Provost Honors.</li>
+          <li>
+            Relevant Courses: Data Structures and Algorithms, Theoretical
+            Foundations for Data Science.
+          </li>
         </ul>
-    </article>
-
-    <h3 style="background-color: lightgray; padding: 5px; border-radius: 65px"><section>LEADERSHIP & PROJECT EXPERIENCE</section></h3>
-    <article>
-        <p><b>Triton Robotics at UC San Diego<span style="margin-left: 350px;"><time datetime="2024-09">Sept 2024</time> - Current</span></p>
-    </b>Administrative Vice President</article>
-    <ul>
-        <li>Lead a redesigned non-technical division structure that hosts large-scale fundraising events, and career panels with multiple student organizations and corporate partners.</li>
-        <li>Supervise financial planning and budgeting processes.</li>
-    </ul>
-    <article>
-        <p><b>Predictive Modeling & Data Analysis for URL Classification<span style="margin-left: 230px;"><time datetime="2024-09">Fall 2024</time></span></p>
-    </b>Data Analyst (Team of 4) | 10-week project</article>
-    <ul>
-        <li>Analyzed datasets to identify patterns for benign, phishing, and malware URLs, using predictive modeling.</li>
-    </ul>
-</body>
+      </article>
+    </section>
+    <section class="resume-section">
+      <h3>SKILLS</h3>
+      <article>
+        <p>Data Analysis | Python / Java | NumPy</p>
+        <p>Collaboration & Leadership | Project Management | Git Workflow</p>
+      </article>
+    </section>
+    <section class="resume-section">
+      <h3>LEADERSHIP & PROJECT EXPERIENCE</h3>
+      <article>
+        <p class="entry-heading">
+          <b>Triton Robotics at UC San Diego</b>
+          <span>Sept 2024 - Current</span>
+        </p>
+        <p>Administrative Vice President</p>
+        <ul>
+          <li>
+            Lead a redesigned non-technical division structure that hosts
+            large-scale fundraising events and career panels with multiple
+            student organizations and corporate partners.
+          </li>
+          <li>Supervise financial planning and budgeting processes.</li>
+        </ul>
+      </article>
+      <article>
+        <p class="entry-heading">
+          <b>Predictive Modeling & Data Analysis for URL Classification</b>
+          <span>Fall 2024</span>
+        </p>
+        <p>Data Analyst (Team of 4) | 10-week project</p>
+        <ul>
+          <li>
+            Analyzed datasets to identify patterns for benign, phishing, and
+            malware URLs using predictive modeling.
+          </li>
+        </ul>
+      </article>
+    </section>
+  </body>
 </html>

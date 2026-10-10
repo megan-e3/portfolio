@@ -103,7 +103,7 @@ form button {
 }
 
 h1 {
-  font-size: 300%;
+  font-size: 355%;
 }
 
 h1,
@@ -114,4 +114,55 @@ h5,
 h6 {
   line-height: 1.1;
   text-wrap: balance;
+}
+
+h2 {
+  font-size: 180%;
+  margin-bottom: 0.5em;
+}
+
+.resume-section {
+  display: grid;
+  grid-template-columns: 12em 1fr;
+  gap: 1em;
+  margin-block: 1.5em;
+  align-items: start;
+}
+
+.resume-section h3 {
+  margin: 0;
+  padding: 0.7em;
+  background: oklch(95% 5% 0);
+  border-radius: 0.4em;
+  font-size: 100%;
+}
+
+.resume-section article {
+  grid-column: 2;
+  margin-bottom: 1em;
+}
+
+.resume-section li {
+  margin-bottom: 1em;
+  max-width: 55ch;
+}
+
+.entry-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 0.5em 1em;
+  margin-top: 0;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5em 1em;
+  margin-top: 0;
+}
+
+.resume-section article p {
+  margin-block: 0 0.5em;
 }
