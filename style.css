@@ -13,6 +13,7 @@ body {
 }
 nav {
   display: flex;
+  --border-color: oklch(50% 10% 200 / 40%);
 }
 
 .main-navigation a {
@@ -24,25 +25,29 @@ nav {
   margin-bottom: 1em;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  /* border-bottom-color: oklch(80% 3% 200); */
+  border-bottom-color: var(--border-color);
 }
 
 .main-navigation a.current {
   border-bottom-width: 0.4em;
   border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
+  /* border-bottom-color: oklch(80% 3% 200); */
+  border-bottom-color: var(--border-color);
   padding-bottom: 0.5em;
 }
 
 html {
   --color-accent: oklch(65% 50% 0);
   accent-color: var(--color-accent);
+  color-scheme: light dark;
+
 }
 
 .main-navigation a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.5em;
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 /* Lab2 step 3.2 unused */
@@ -165,4 +170,12 @@ h2 {
 
 .resume-section article p {
   margin-block: 0 0.5em;
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right:  1rem;
+  font-size: 80%;
+  font-family: inherit;
 }
