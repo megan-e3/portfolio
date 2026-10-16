@@ -137,7 +137,7 @@ h2 {
 .resume-section h3 {
   margin: 0;
   padding: 0.7em;
-  background: oklch(95% 5% 0);
+  background: light-dark(oklch(95% 5% 0), oklch(45% 25% 0));
   border-radius: 0.4em;
   font-size: 100%;
 }
