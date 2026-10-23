@@ -4,16 +4,6 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
-// Step 2
-// const navLinks = $$("nav a");
-
-// let currentLink = navLinks.find(
-//   (a) => a.host === location.host && a.pathname === location.pathname,
-// );
-
-// currentLink?.classList.add('current');
-
-// Step 3
 let pages = [
   { url: "", title: "Home" },
   { url: "projects/", title: "Projects" },
@@ -51,7 +41,7 @@ for (let p of pages) {
 }
 
 document.body.insertAdjacentHTML(
-  'afterbegin',
+  "afterbegin",
   `
 	<label class="color-scheme">
 		Theme:
@@ -63,14 +53,49 @@ document.body.insertAdjacentHTML(
 	</label>`,
 );
 
-let select = document.querySelector('.color-scheme select')
-select.addEventListener('input', function (event) {
-  console.log('color scheme changed to', event.target.value);
-  document.documentElement.style.setProperty('color-scheme', event.target.value);
-  localStorage.colorScheme = event.target.value
+let select = document.querySelector(".color-scheme select");
+select.addEventListener("input", function (event) {
+  console.log("color scheme changed to", event.target.value);
+  document.documentElement.style.setProperty(
+    "color-scheme",
+    event.target.value,
+  );
+  localStorage.colorScheme = event.target.value;
 });
 
-if ('colorScheme' in localStorage) {
-  document.documentElement.style.setProperty('color-scheme', localStorage.colorScheme)
+if ("colorScheme" in localStorage) {
+  document.documentElement.style.setProperty(
+    "color-scheme",
+    localStorage.colorScheme,
+  );
   select.value = localStorage.colorScheme;
+}
+
+// Lab4 step1
+export async function fetchJSON(url) {
+  try {
+    // Fetch the JSON file from the given URL
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching or parsing JSON data:", error);
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = "h2") {
+  containerElement.innerHTML = "";
+
+  for (const project of projects) {
+    const article = document.createElement("article");
+    article.innerHTML = `
+    <h3>${project.title}</h3>
+    <img src="${project.image}" alt="${project.title}">
+    <p>${project.description}</p>
+`;
+    containerElement.appendChild(article);
+  }
 }
