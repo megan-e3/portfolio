@@ -41,7 +41,6 @@ html {
   --color-accent: oklch(65% 50% 0);
   accent-color: var(--color-accent);
   color-scheme: light dark;
-
 }
 
 .main-navigation a:hover {
@@ -175,7 +174,7 @@ h2 {
 .color-scheme {
   position: absolute;
   top: 1rem;
-  right:  1rem;
+  right: 1rem;
   font-size: 80%;
   font-family: inherit;
 }
@@ -215,13 +214,20 @@ h2 {
   font-family: Baskerville, serif;
   font-variant-numeric: oldstyle-nums;
   color: gray;
-  }
+}
 
 #projects-pie-plot {
   max-width: 20em;
   margin-block: 2em;
-
   overflow: visible;
+  &:has(path:hover) {
+    path:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+  path {
+    transition: 300ms;
+  }
 }
 
 .legend {
@@ -261,4 +267,16 @@ h2 {
 
 .legend {
   flex: 1;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+
+path {
+  cursor: pointer;
 }
