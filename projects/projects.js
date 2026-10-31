@@ -110,8 +110,7 @@ searchInput.addEventListener("change", (event) => {
 
   // // TODO: render updated projects!
   renderProjects(filteredProjects, projectsContainer, "h2");
-  renderPieChart(filterProjects(false));
-  // renderPieChart(filteredProjects);
+  renderPieChart(filteredProjects);
 });
 
 // let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
