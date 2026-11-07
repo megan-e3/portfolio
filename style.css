@@ -280,3 +280,61 @@ h2 {
 path {
   cursor: pointer;
 }
+
+#stats {
+  margin-block: 2em;
+}
+
+#stats h2 {
+  margin-bottom: 1em;
+}
+
+.gridlines path {
+  display: none;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em 1em;
+  margin: 0;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info dt {
+  color: gray;
+  font-weight: normal;
+}
+
+dl.info dd {
+  margin: 0;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  z-index: 10;
+  padding: 1em;
+  background-color: light-dark(rgba(255, 255, 255, 0.9), rgba(30, 30, 30, 0.9));
+  color: light-dark(#222, #eee);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  backdrop-filter: blur(8px);
+}
