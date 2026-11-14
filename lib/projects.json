@@ -1,15 +1,22 @@
 [
     {
-        "title": "Is Protein Content related to the Number of Steps in a Recipe?",
-        "year": "2022",
-        "image": "/portfolio/images/plot1.png",
-        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat architecto quas in cum commodi ipsum dolorum voluptas eaque inventore corrupti laboriosam quod aperiam, saepe dolore quisquam eligendi. Cupiditate, blanditiis culpa."
+        "title": "Fun Boston Bikewatching!",
+        "year": "2026",
+        "image": "/portfolio/images/plot13.png",
+        "description": "Voluptatum autem molestiae odio, iste, nulla quas molestias, minima beatae numquam qui voluptas adipisci provident? Ullam facere asperiores culpa harum quos maiores inventore sequi voluptates, minima recusandae incidunt consequatur ad.",
+        "url": "https://megan-e3.github.io/bikestaring/"
     },
     {
         "title": "Recipes' Rating Missingness may affect the time taken on a recipe.",
         "year": "2026",
         "image": "/portfolio/images/plot2.png",
         "description": "Illum deleniti debitis in libero quia amet itaque minima delectus magnam, atque earum reiciendis, eos sit blanditiis accusantium explicabo possimus? Quisquam commodi eius ratione, debitis rem delectus doloribus aspernatur culpa!"
+    },
+    {
+        "title": "Is Protein Content related to the Number of Steps in a Recipe?",
+        "year": "2022",
+        "image": "/portfolio/images/plot1.png",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat architecto quas in cum commodi ipsum dolorum voluptas eaque inventore corrupti laboriosam quod aperiam, saepe dolore quisquam eligendi. Cupiditate, blanditiis culpa."
     },
     {
         "title": "Are old, cheap houses at risk of runoff?",

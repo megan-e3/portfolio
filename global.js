@@ -93,7 +93,7 @@ export function renderProjects(projects, containerElement, headingLevel = "h2") 
   for (const project of projects) {
     const article = document.createElement("article");
     article.innerHTML = `
-    <h3>${project.title}</h3>
+    <h3>${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.title}</a>` : project.title }</h3>
     <img src="${project.image}" alt="${project.title}">
     <div>
       <p>${project.description}</p>
