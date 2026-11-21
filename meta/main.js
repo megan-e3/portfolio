@@ -7,6 +7,7 @@ let commitProgress = 100;
 let timeScale;
 let commitMaxTime;
 let filteredCommits;
+let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
 function onTimeSliderChange() {
   commitProgress = document.querySelector("#commit-progress").value;
@@ -18,6 +19,7 @@ function onTimeSliderChange() {
       timeStyle: "short",
     });
   filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
+  updateFileDisplay(filteredCommits);
   updateScatterPlot(data, filteredCommits);
 }
 
@@ -353,7 +355,9 @@ function renderLanguageBreakdown(selection) {
     container.innerHTML = "";
     return;
   }
-  const requiredCommits = selectedCommits.length ? selectedCommits : filteredCommits;
+  const requiredCommits = selectedCommits.length
+    ? selectedCommits
+    : filteredCommits;
   const lines = requiredCommits.flatMap((d) => d.lines);
 
   // Use d3.rollup to count lines per language
@@ -376,6 +380,43 @@ function renderLanguageBreakdown(selection) {
             <dd>(${formatted})</dd>
         `;
   }
+}
+
+function updateFileDisplay(filteredCommits) {
+  let lines = filteredCommits.flatMap((d) => d.lines);
+  let files = d3
+    .groups(lines, (d) => d.file)
+    .map(([name, lines]) => {
+      return { name, lines, type: lines[0].type };
+    });
+
+  let filesContainer = d3
+    .select("#files")
+    .selectAll("div")
+    .data(files, (d) => d.name)
+    .join(
+      // This code only runs when the div is initially rendered
+      (enter) =>
+        enter.append("div").call((div) => {
+          div.append("dt").append("code");
+          div.append("dd");
+        }),
+    );
+
+  // This code updates the div info
+  filesContainer.attr("style", (d) => `--color: ${colors(d.type)}`);
+
+  filesContainer
+    .select("dt > code")
+    .html((d) => `${d.name}<small>${d.lines.length} lines</small>`);
+
+  // append one div for each line
+  filesContainer
+    .select("dd")
+    .selectAll("div")
+    .data((d) => d.lines)
+    .join("div")
+    .attr("class", "loc");
 }
 
 let data = await loadData();
