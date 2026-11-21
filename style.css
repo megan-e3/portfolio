@@ -297,6 +297,9 @@ circle {
   transition: 200ms;
   transform-origin: center;
   transform-box: fill-box;
+  @starting-style {
+    r: 0;
+  }
 }
 
 circle:hover {
@@ -365,3 +368,25 @@ circle.selected {
   stroke-width: 3px;
   opacity: 50%;
 }
+
+.commit-slider {
+  display: flex;
+  flex: 1;
+  align-items: baseline;
+}
+
+.commit-slider label {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 1em;
+}
+
+#commit-progress {
+  flex: 1;
+}
+
+#commit-time {
+  margin-left: auto;
+}
+
